@@ -11,28 +11,20 @@ import (
 )
 
 func promptForWorkload(challenges map[string]interface{}) []string {
-
 	options := []string{}
 	for k := range challenges {
 		options = append(options, k)
 	}
 
-	index := -1
 	var result string
 	var err error
 
-	for index < 0 {
-		prompt := promptui.Select{
-			Label: "Select a workload",
-			Items: options,
-		}
-
-		index, result, err = prompt.Run()
-
-		if index == -1 {
-			options = append(options, result)
-		}
+	prompt := promptui.Select{
+		Label: "Select a workload",
+		Items: options,
 	}
+
+	_, result, err = prompt.Run()
 
 	if err != nil {
 		fmt.Printf("Prompt failed %v\n", err)
