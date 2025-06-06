@@ -31,6 +31,7 @@ func promptForWorkload(challenges map[string]interface{}) []string {
 		os.Exit(1)
 	}
 
+	// If the workload is a map, prompt for a sub-workload
 	if _, ok := challenges[result].(map[string]interface{}); ok {
 		return promptForWorkload(challenges[result].(map[string]interface{}))
 	}
@@ -38,7 +39,7 @@ func promptForWorkload(challenges map[string]interface{}) []string {
 	return challenges[result].([]string)
 }
 
-func handleRun(cmd *cobra.Command, args []string) {
+func handleRun(cmd *cobra.Command, _ []string) {
 	workload := promptForWorkload(challenges)
 	for {
 		ok, _ := ExecuteCommand([]string{"go", "build", "-C", "challenges", "-o", "go-gossip-gloomers"})
