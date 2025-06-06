@@ -1,0 +1,34 @@
+# Go Gossip Gloomers CLI
+
+A simple CLI tool to help run the [Gossip Gloomers](https://fly.io/dist-sys/) distributed systems challenges with ease using Docker. It provides a more user-friendly interface and allows you to manage system resources efficiently.
+
+## 🚀 Features
+
+- Docker-based setup for easy execution and isolation
+- Resource limits to prevent your machine from struggling during tests
+- Volume mounting for working directly with challenge files
+
+## 🐳 How to Run
+
+Make sure your code goes on `challenges` folder.
+
+#### 1. Build the Docker Image 
+
+```sh
+docker build -t gossip-cli .
+```
+#### 2. Run the container
+```sh
+docker run -it -v ./challenges:/app/challenges gossip-cli
+```
+> **Note**
+Some tests are resource-intensive. Running them inside Docker helps manage CPU and memory usage.
+
+If your machine slows down during tests, run with limits:
+```sh
+docker run -it \
+  -m 6GB \
+  --cpus=6 \
+  -v ./challenges:/app/challenges \
+  gossip-cli
+```
