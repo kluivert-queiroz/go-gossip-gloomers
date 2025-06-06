@@ -7,8 +7,9 @@ A simple CLI tool to help run the [Gossip Gloomers](https://fly.io/dist-sys/) di
 - Docker-based setup for easy execution and isolation
 - Resource limits to prevent your machine from struggling during tests
 - Volume mounting for working directly with challenge files
-
+- Restart tests pressing by just `R`
 ![image](https://github.com/user-attachments/assets/ec58b665-5268-4e73-9cec-6a80269c0708)
+![image](https://github.com/user-attachments/assets/f032e155-dd45-4e6d-8284-f861837d23b4)
 
 
 ## 🐳 How to Run
