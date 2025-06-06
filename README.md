@@ -8,6 +8,9 @@ A simple CLI tool to help run the [Gossip Gloomers](https://fly.io/dist-sys/) di
 - Resource limits to prevent your machine from struggling during tests
 - Volume mounting for working directly with challenge files
 
+![image](https://github.com/user-attachments/assets/ec58b665-5268-4e73-9cec-6a80269c0708)
+
+
 ## 🐳 How to Run
 
 Make sure your code goes on `challenges` folder.
